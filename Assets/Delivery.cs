@@ -18,7 +18,7 @@ public class Delivery : MonoBehaviour
         spriteRenderer.color = hasNotPackageColor;
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collider)
     {
         Debug.Log("OOOOOOOOOOOOOOOOOOOOOOOOOOF");
     }
