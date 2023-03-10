@@ -27,13 +27,13 @@ public class Driver : MonoBehaviour
     {
         if (collider.tag == "Boost")
         {
-            moveSpeed = boostSpeed;
+            moveSpeed += boostSpeed;
         }
 
         if (collider.tag == "Slow")
         {
 
-            moveSpeed = slowSpeed;
+            moveSpeed -= slowSpeed;
         }
     }
 }
