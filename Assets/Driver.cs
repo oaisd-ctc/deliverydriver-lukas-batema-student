@@ -14,8 +14,12 @@ public class Driver : MonoBehaviour
         float steerAmount = Input.GetAxis("Horizontal") * steerSpeed * Time.deltaTime;
         float moveAmount = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
 
-        transform.Rotate(0, 0, -steerAmount);
         transform.Translate(0, moveAmount, 0);
+
+        if (moveAmount != 0)
+        {
+            transform.Rotate(0, 0, -steerAmount);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -27,13 +31,13 @@ public class Driver : MonoBehaviour
     {
         if (collider.tag == "Boost")
         {
-            moveSpeed += boostSpeed;
+            moveSpeed = boostSpeed;
         }
 
         if (collider.tag == "Slow")
         {
 
-            moveSpeed -= slowSpeed;
+            moveSpeed = slowSpeed;
         }
     }
 }
